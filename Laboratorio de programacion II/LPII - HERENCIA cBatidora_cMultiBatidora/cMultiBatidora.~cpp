@@ -1,0 +1,54 @@
+ #include "cMultiBatidora.h"
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+
+
+cMultibatidora::cMultibatidora( const unsigned int SN, const unsigned int cant_Helices):cBatidora(SN), cant_helices(cant_Helices)
+{
+wifi="G";
+tipobowl="acero";
+
+}
+
+
+cMultibatidora::~cMultibatidora(){}
+
+
+//Getter  y setters
+
+void cMultibatidora::setWIFI(string W)
+{wifi=W;}
+void cMultibatidora::setTipoBowl(string T)
+{tipobowl=T;}
+
+
+string cMultibatidora::getWIFI(){return wifi;}
+string cMultibatidora::getTipobowl(){return tipobowl;}
+
+
+//sobrecargas y demas
+
+ostream& operator<<(ostream& out,const cMultibatidora& B)
+{
+           //casteo de multibatidora a batidora para utilizar la
+           //funcion friend cout declarada en cBatidora.h
+          out<<(cBatidora)B;
+          out<<B.wifi<<endl;
+          out<<B.tipobowl<<endl;
+          out<<B.cant_helices<<endl;
+          return out;
+
+}
+istream& operator>>(istream& in ,cMultibatidora& B)
+{
+        cBatidora *Bat=&B;
+        in>>(*Bat);
+
+        in>>B.wifi;
+        in>>B.tipobowl;
+        return in;
+}

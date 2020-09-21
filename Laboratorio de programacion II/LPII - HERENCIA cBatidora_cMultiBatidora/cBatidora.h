@@ -1,0 +1,46 @@
+#ifndef CBATIDORA_H
+#define CBATIDORA_H
+#define EMAX 10
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+class cBatidora{
+
+protected:
+static unsigned int botones;
+const unsigned int serialnumber;
+unsigned int potencia,rpm;
+string *elementosabatir;
+unsigned int cantactual;
+
+public:
+cBatidora(unsigned int serialnumber, unsigned int potencia=300, unsigned int rpm=5000);
+cBatidora(unsigned int serial,const cBatidora&);   //lo paso por refer y no quiero modificarlo
+~cBatidora();
+
+// geters y setters
+ unsigned int getrpm()const {return rpm;}
+ unsigned int getpotencia()const {return potencia;}
+
+ void setrpm(unsigned int p){rpm=p;}
+
+// METODOS FUNCIONALES
+cBatidora operator++();   //preincremento
+cBatidora operator++(int); //post
+cBatidora operator+(unsigned int) const;
+string operator[](unsigned int) const;
+bool operator==(const cBatidora&) const;
+// friend cBatidora operator++(cBatidora& bati,int v); //post con friend
+
+};
+/*
+cBatidora operator++(cBatidora& bati,int v); //post sin friend
+*/
+
+ostream& operator<<(ostream&,const cBatidora&);
+istream& operator>>(istream&,cBatidora&);
+
+#endif

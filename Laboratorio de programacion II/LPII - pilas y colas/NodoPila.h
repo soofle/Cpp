@@ -1,0 +1,29 @@
+#ifndef NODOPILA_H
+#define NODOPILA_H
+#include <iostream.h>
+#include <string>
+
+
+using namespace std;
+
+typedef char ElementoPila;
+
+class NodoPila{
+
+public:
+        NodoPila(ElementoPila nuevo, NodoPila* sig = NULL);
+        ~NodoPila();
+
+        ElementoPila* getDato()const;
+        void setDato(ElementoPila& dat);
+        NodoPila* getSiguiente()const;
+        void setSiguiente(NodoPila* sig);
+
+
+private:
+        ElementoPila* dato;
+        NodoPila* siguiente;
+
+};
+#endif
+

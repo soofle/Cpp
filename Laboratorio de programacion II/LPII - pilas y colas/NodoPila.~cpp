@@ -1,0 +1,13 @@
+#include "NodoPila.h"
+
+/*-----   NodoLista   -----*/
+NodoPila::NodoPila(ElementoPila nuevo, NodoPila* sig)
+                        {dato = new ElementoPila(nuevo);
+                         siguiente = sig;}
+NodoPila::~NodoPila(){delete dato;}
+
+ElementoPila* NodoPila::getDato()const {return dato;}
+void NodoPila::setDato(ElementoPila& dat) {*dato = dat;}
+NodoPila* NodoPila::getSiguiente()const {return siguiente;}
+void NodoPila::setSiguiente(NodoPila* sig) {siguiente=sig;}
+ 
