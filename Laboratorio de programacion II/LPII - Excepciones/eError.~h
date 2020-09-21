@@ -1,0 +1,24 @@
+
+//#include <exception>
+
+using namespace std;
+
+class ExcepcionDeDivisionEntreCero(){
+
+public:
+       ExcepcionDeDivisionEntreCero()
+       : mensaje ("se intento una division entre cero") {}
+       const char *what() const {return mensaje;}
+private:
+        const char *mensaje;
+};// fin de la clase  ExcepcionDeDivisionEntreCero
+
+// funcion cociente
+
+doble cociente (int numerador, int denominador)
+{
+      if(denominador == 0)
+                     throw ExcepcionDeDivisionEntreCero();
+      return static_cast<double> (numerador)/denominador;
+
+}//fin de la función cociente

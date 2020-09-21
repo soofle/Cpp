@@ -1,0 +1,16 @@
+#ifndef CTRANSPORTE_H
+#define CTRANSPORTE_H
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+class cTransporte{
+        protected:
+
+        public:
+                cTransporte();
+                ~cTransporte(){};
+                virtual
+
+};
+#endif

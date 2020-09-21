@@ -1,0 +1,46 @@
+
+using namespace std;
+// Clase derivada de la clase exception
+// Excepcion de División por cero
+class EDivisionPorCero : public exception{
+
+public:
+       virtual const char* what() const throw()
+       {
+       return "Division por cero";
+       }
+} edivporcero;
+
+
+
+// Clase derivada de la clase exception
+// Excepcion de error de string ingresado
+class ECarctVacio : public exception{
+
+public:
+       virtual const char* what() const throw()
+       {
+       return "Tipo de numero mal ingresado";
+       }
+} ecaract;
+
+
+class EDivisionPorCero{
+
+public:
+
+       EDivisionPorCero():mensaje("Division por cero")
+       const char* error()
+       {
+       return mensaje;
+       }
+
+
+private
+
+       const string mensaje;
+
+
+
+
+}
