@@ -1,0 +1,40 @@
+#include <iostream.h>
+#include <string>
+#include "cNodo.h"
+
+using namespace std;
+
+
+cNodo::cNodo(alumno info, int pedido)
+{
+        this->info=info;
+        entradas_pedidas=pedido;  //poner posicion
+}
+
+cNodo::~cNodo()
+{
+        if(siguiente!=NULL) delete siguiente;
+
+}
+
+void cNodo::setInformacion(alumno info)
+{
+        this->info=info;
+}
+
+void cNodo::setEntradas_Pedidas(int pedido)
+{
+        entradas_pedidas=pedido;
+}
+
+alumno cNodo::getInformacion()
+{
+        return info;
+}
+
+int cNodo::getEntradas_pedidas(
+{
+        return entradas_pedidas;
+}
+
+ 

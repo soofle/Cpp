@@ -1,0 +1,22 @@
+//---------------------------------------------------------------------------
+
+#ifndef ListaH
+#define ListaH
+//---------------------------------------------------------------------------
+#include <Classes.hpp>
+#include <Controls.hpp>
+#include <StdCtrls.hpp>
+#include <Forms.hpp>
+//---------------------------------------------------------------------------
+class TListaForm : public TForm
+{
+__published:	// IDE-managed Components
+private:	// User declarations
+public:		// User declarations
+        __fastcall TListaForm(TComponent* Owner);
+};
+//---------------------------------------------------------------------------
+extern PACKAGE TListaForm *ListaForm;
+//---------------------------------------------------------------------------
+#endif
+ 

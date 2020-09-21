@@ -1,0 +1,31 @@
+#include <string.h>
+#include <iostream>
+#include "cAlumno.h"             // o lo tengo q hacer friend???       
+#ifndef CLISTAESTATICA_H
+#define CLISTAESTATICA_H
+
+using namespace std;
+
+class cListaestatica
+{
+        private:
+
+
+        public:
+        cListaestatica()
+
+        ~cListaestatica(){};
+
+        //*Setters*//
+        void setnombre(string nombre)
+                {this->nombre=nombre;};
+
+
+        //*Getters*//
+        unsigned int getnumerolibreta(void)
+                {return numerolibreta;};
+
+
+};
+
+#endif

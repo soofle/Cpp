@@ -1,0 +1,42 @@
+#ifndef CPERSONA_H
+#define CPERSONA_H
+#include <string.h>
+#include <iostream>
+
+
+using namespace std;
+
+//DECLARACION DE LA CLASE EMPLEADO
+
+class cPersona {
+//Atributos protegidos de la persona
+// no se ven desde el exterior de la clase
+protected:
+string Nombre;
+string Apellido;
+const unsigned long int DNI;
+float altura;
+float peso;
+bool Validar(){return true;};
+//Metodos publicos
+//ME PERMITEN INTERACCION CON EL EXTERIOR
+public:
+//Constructor SIMPLE
+//cPersona(unsigned long int DNI);
+//Constructor con parametros
+//cPersona(unsigned long int DNI, string Nombre="hola",string apellido = float altura =1.78, float peso=70);
+//Constructor con parametros por defecto
+cPersona(unsigned long int DNI, string nombre = "" , string apellido = "" , float altura =1.75 , float peso=70.0);
+
+//constructor por copia
+cPersona(unsigned long int DNI, const cPersona &otra);
+~cPersona(){};
+void verinfo()const;
+bool setAltura(float);
+float getAltura();
+bool setPeso(float);
+float getPeso();
+};
+
+ostream& operator<<(ostream&, const cPersona&);
+#endif

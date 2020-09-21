@@ -1,0 +1,36 @@
+#include <string.h>
+#include <iostream>
+#ifndef CALUMNO_H
+#define CALUMNO_H
+
+using namespace std;
+
+class cAlumno
+{
+        private:
+        string nombre;
+        string apellido;
+        unsigned int numerolibreta;
+
+
+        public:
+        cAlumno();
+        ~cAlumno(){};
+
+        //*Setters*//
+        void setnombre(string);
+        void setapellido(string);
+        void setnumerolibreta(unsigned int);
+
+        //*Getters*//
+        string getnombre(void)
+                {return nombre;};
+        string getapellido(void)
+                {return apellido;};
+        unsigned int getnumerolibreta(void)
+                {return numerolibreta;};
+
+
+};
+
+#endif

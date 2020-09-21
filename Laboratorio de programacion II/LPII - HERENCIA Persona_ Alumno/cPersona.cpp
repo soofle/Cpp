@@ -1,0 +1,76 @@
+#include <string.h>
+#include <iostream>
+#include "cPersona.h"
+using namespace std;
+
+
+//Consructor de la clase persona
+cPersona::cPersona(unsigned long int DNI, string nombre , string apellido, float Altura , float Peso):DNI(DNI)
+//cPersona::cPersona(unsigned long int DNI, string nombre, float alt, float pes)
+{         
+
+ this-> Nombre=nombre;
+ this->Apellido=apellido;
+ altura=Altura;
+ peso=Peso;
+
+
+ }
+
+ cPersona::cPersona(unsigned long int DNI, const cPersona &otra):DNI(DNI)
+ {
+ this-> Nombre=otra.Nombre;
+ this->Apellido=otra.Apellido;
+ altura=otra.altura;
+ peso=otra.peso;
+
+ }
+
+ /*// /Destructor de la clase persona, si tuviera atributos DINAMICOS
+ /cPersona::~cPersona()
+ {
+ if(Nombre!=NULL)
+        delete Nombre;
+
+ }
+
+ */
+//Setea la altura
+bool cPersona::setAltura(float alt)
+{
+if((alt<1.5)||(alt>2.5))return false;
+altura=alt;
+return true;
+}
+//Devuelve la altura
+float cPersona::getAltura(){return altura;}
+
+bool cPersona::setPeso(float peso)
+{
+if((peso<50.0)||(peso>300.0))return false;
+this->peso=peso;
+return true;
+}
+//Devuelve la altura
+float cPersona::getPeso(){return peso;}
+
+
+    // imprime las caracteristicas de la persona
+void cPersona::verinfo()const
+{
+cout<<this->Nombre<<endl;
+cout<<this->DNI;
+cout<<Apellido<<endl;
+cout<<altura<<endl;
+cout<<peso<<endl;
+
+cout<<"IMC: "<<peso/(altura*altura)<<endl;
+
+}
+
+
+ostream& operator<<(ostream& out, const cPersona& persona)
+{
+        persona.verinfo();
+        return out;
+}
